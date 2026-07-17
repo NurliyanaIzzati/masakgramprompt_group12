@@ -1,0 +1,16 @@
+# Maven generated files
+project/nutritional-llm-service/target/
+*.class
+
+# Logs and temporary files
+*.log
+*.tmp
+*.part
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+
+# Sensitive configuration
+.env
+*.env

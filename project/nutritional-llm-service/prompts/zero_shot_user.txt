@@ -1,0 +1,70 @@
+Analyze the following cooking transcript and produce a complete
+nutrition facts sheet in JSON format.
+
+Transcript:
+"""
+{{TRANSCRIPT}}
+"""
+
+CRITICAL MODEL COMPLIANCE:
+Do NOT enclose the JSON output within markdown code blocks (such as ```json ... 
+```). Start your response directly with the open curly brace '{' and end exactly with the closing curly brace '}'. Do not include any introductory explanations, prose, or conversational text.
+
+Return the result using this exact JSON structure:
+{
+  "recipe_name": "",
+  "servings_estimated": 0,
+  "amount_per_serving": {
+    "calories": 0,
+    "total_fat_g": 0,
+    "saturated_fat_g": 0,
+    "cholesterol_mg": 0,
+    "sodium_mg": 0,
+    "total_carbohydrate_g": 0,
+    "dietary_fiber_g": 0,
+    "total_sugars_g": 0,
+    "protein_g": 0,
+    "vitamin_d_mcg": 0,
+    "calcium_mg": 0,
+    "iron_mg": 0,
+    "potassium_mg": 0
+  },
+  "ingredients": [
+    {
+      "ingredient_name_original": "",
+      "ingredient_name_en": "",
+      "quantity_value": 0,
+      "quantity_unit_original": "",
+      "quantity_unit_en": "",
+      "estimated_weight_g": 0,
+      "calories": 0,
+      "total_fat_g": 0,
+      "saturated_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 0,
+      "total_carbohydrate_g": 0,
+      "dietary_fiber_g": 0,
+      "total_sugars_g": 0,
+      "protein_g": 0,
+      "vitamin_d_mcg": 0,
+      "calcium_mg": 0,
+      "iron_mg": 0,
+      "potassium_mg": 0
+    }
+  ],
+  "nutrition_total": {
+    "calories": 0,
+    "total_fat_g": 0,
+    "saturated_fat_g": 0,
+    "cholesterol_mg": 0,
+    "sodium_mg": 0,
+    "total_carbohydrate_g": 0,
+    "dietary_fiber_g": 0,
+    "total_sugars_g": 0,
+    "protein_g": 0,
+    "vitamin_d_mcg": 0,
+    "calcium_mg": 0,
+    "iron_mg": 0,
+    "potassium_mg": 0
+  }
+}

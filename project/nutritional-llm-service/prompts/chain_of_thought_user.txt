@@ -1,0 +1,116 @@
+Analyze the following cooking transcript step by step, then
+produce a complete nutrition facts sheet in JSON format.
+
+Transcript:
+"""
+{{TRANSCRIPT}}
+"""
+
+Follow these steps in your reasoning:
+
+Step 1 - Identify all ingredients:
+List every ingredient mentioned in the transcript.
+Translate each one to English.
+Flag any that are ambiguous, informal, or code-switched.
+
+Step 2 - Extract quantities and units:
+For each ingredient, extract the quantity and unit exactly as spoken.
+If no quantity is given (e.g. secukup rasa), assign a standard
+culinary estimate and note it.
+
+Step 3 - Convert to grams:
+Convert each quantity to an estimated weight in grams using
+standard Malaysian culinary conversions:
+- 1 sudu besar (tablespoon) = 15g for liquids, varies for solids
+- 1 sudu kecil (teaspoon) = 5g
+- 1 ulas (clove of garlic) = 3g
+- 1 biji (egg or whole item) = 50g per egg
+- 1 pinggan (plate of rice) = 200g
+- 1 ketul (piece of dried chili) = 2g
+- secukup rasa (to taste) = 2g
+
+Step 4 - Estimate nutritional values per ingredient:
+For each ingredient at its estimated gram weight, estimate:
+calories, total_fat_g, saturated_fat_g, cholesterol_mg,
+sodium_mg, total_carbohydrate_g, dietary_fiber_g,
+total_sugars_g, protein_g, vitamin_d_mcg, calcium_mg,
+iron_mg, potassium_mg.
+
+Step 5 - Compute nutrition_total:
+Sum all ingredient values field by field.
+
+Step 6 - Compute amount_per_serving:
+Divide each nutrition_total field by servings_estimated.
+Round all values to 1 decimal place.
+
+Step 7 - Produce the final JSON:
+Output your final structure strictly inside the JSON format below.
+
+CRITICAL DISCIPLINE FOR THE MODEL:
+1. You MUST put your step-by-step thinking or analysis notes INSIDE a key named "reasoning_analysis" at the root level of the JSON object itself.
+2. Absolutely DO NOT output any step-by-step analysis text, conversational intro, or explanations OUTSIDE the curly braces.
+3. Do NOT wrap the code in markdown blocks like ```json. Start your output directly with '{' and end with '}'.
+
+{
+  "reasoning_analysis": {
+    "step_1_ingredients": "",
+    "step_2_quantities": "",
+    "step_3_conversion": "",
+    "step_4_estimation": ""
+  },
+  "recipe_name": "",
+  "servings_estimated": 0,
+  "amount_per_serving": {
+    "calories": 0,
+    "total_fat_g": 0,
+    "saturated_fat_g": 0,
+    "cholesterol_mg": 0,
+    "sodium_mg": 0,
+    "total_carbohydrate_g": 0,
+    "dietary_fiber_g": 0,
+    "total_sugars_g": 0,
+    "protein_g": 0,
+    "vitamin_d_mcg": 0,
+    "calcium_mg": 0,
+    "iron_mg": 0,
+    "potassium_mg": 0
+  },
+  "ingredients": [
+    {
+      "ingredient_name_original": "",
+      "ingredient_name_en": "",
+      "quantity_value": 0,
+      "quantity_unit_original": "",
+      "quantity_unit_en": "",
+      "estimated_weight_g": 0,
+      "calories": 0,
+      "total_fat_g": 0,
+      "saturated_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 0,
+      "total_carbohydrate_g": 0,
+      "dietary_fiber_g": 0,
+      "total_sugars_g": 0,
+      "protein_g": 0,
+      "vitamin_d_mcg": 0,
+      "calcium_mg": 0,
+      "iron_mg": 0,
+      "potassium_mg": 0
+    }
+  ],
+  "nutrition_total": {
+    "calories": 0,
+    "total_fat_g": 0,
+    "saturated_fat_g": 0,
+    "cholesterol_mg": 0,
+    "sodium_mg": 0,
+    "total_carbohydrate_g": 0,
+    "dietary_fiber_g": 0,
+    "total_sugars_g": 0,
+    "protein_g": 0,
+    "vitamin_d_mcg": 0,
+    "calcium_mg": 0,
+    "iron_mg": 0,
+    "potassium_mg": 0
+  }
+}
