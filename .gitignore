@@ -1,8 +1,15 @@
-# Maven generated files
+# Compiled Maven output
 project/nutritional-llm-service/target/
+target/
 *.class
 
-# Logs and temporary files
+# Local credential files
+.env
+*.env
+database.properties
+application-local.properties
+
+# Temporary files
 *.log
 *.tmp
 *.part
@@ -10,7 +17,3 @@ project/nutritional-llm-service/target/
 # Operating-system files
 .DS_Store
 Thumbs.db
-
-# Sensitive configuration
-.env
-*.env

@@ -5,10 +5,31 @@ import java.sql.Connection;
 public class DatabaseConnectionTest {
 
     public static void main(String[] args) {
-        try (Connection conn = DatabaseConnection.getConnection()) {
-            System.out.println(" Database connected successfully!");
+        try (Connection connection =
+                     DatabaseConnection.getConnection()) {
+
+            System.out.println(
+                    "Database connected successfully!"
+            );
+
+            System.out.println(
+                    "Database: "
+                    + connection.getCatalog()
+            );
+
+            System.out.println(
+                    "MySQL version: "
+                    + connection
+                        .getMetaData()
+                        .getDatabaseProductVersion()
+            );
+
         } catch (Exception e) {
-            System.err.println(" Connection failed!");
+            System.err.println(
+                    "Database connection failed: "
+                    + e.getMessage()
+            );
+
             e.printStackTrace();
         }
     }
